@@ -1,0 +1,114 @@
+.commande-section {
+  background-color: #F6E9D7;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.commande-title {
+  font-size: 2.6rem;
+  color: #E2725B;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.commande-subtitle {
+  font-size: 1.1rem;
+  color: #5C4033;
+  font-style: italic;
+  margin-bottom: 3rem;
+}
+
+/* === Etapes === */
+.commande-steps {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.commande-step {
+  background-color: #FFE5B4;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 280px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.commande-step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.commande-number {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  background-color: #E2725B;
+  color: white;
+  font-weight: bold;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  border-radius: 50%;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.commande-step h3 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  color: #5C4033;
+  font-family: 'Inter', sans-serif;
+}
+
+.commande-step p {
+  font-size: 0.95rem;
+  color: #5C4033;
+  margin-top: 0.6rem;
+}
+
+/* === CTA === */
+.commande-button {
+  display: inline-block;
+  margin-top: 3rem;
+  background-color: #E2725B;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.commande-button:hover {
+  background-color: #5C4033;
+}
+
+/* === Animation === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .commande-step {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+.commande-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+}

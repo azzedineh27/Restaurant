@@ -1,0 +1,62 @@
+.avis-section {
+    background-color: #F6E9D7;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  
+  .avis-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    color: #5C4033;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .avis-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .avis-card {
+    background-color: #FFE5B4;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 12px 28px rgba(92, 64, 51, 0.1);
+    max-width: 320px;
+    flex: 1;
+    position: relative;
+    text-align: left;
+    transition: transform 0.3s ease;
+    border-left: 4px solid #E2725B;
+  }
+  
+  .avis-card:hover {
+    transform: translateY(-6px);
+  }
+  
+  .avis-quote {
+    font-size: 1.1rem; /* ↑ légèrement */
+    color: #5C4033;
+    font-style: italic;
+    margin-bottom: 1.2rem;
+    line-height: 1.8; /* ↑ meilleure lisibilité */
+  }
+  
+  .avis-icon {
+    font-size: 3rem;
+    color: #E2725B;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .avis-name {
+    font-weight: 600;
+    color: #A1725D;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+  }
+  

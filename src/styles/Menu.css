@@ -1,0 +1,191 @@
+.menu-section {
+  background-color: #FFE5B4;
+  padding: 5rem 2rem;
+  color: #5C4033;
+  font-family: 'Inter', sans-serif;
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-family: 'Playfair Display', serif;
+  color: #E2725B;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.menu-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #E2725B;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* === 2 colonnes === */
+.menu-columns {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Colonne */
+.menu-left,
+.menu-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Catégories */
+.menu-category h3 {
+  font-size: 1.4rem;
+  color: #E2725B;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Inter', sans-serif;
+}
+
+.menu-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Chaque plat */
+.menu-category li {
+  border-bottom: 1px dashed rgba(92, 64, 51, 0.2);
+  padding-bottom: 1.2rem;
+  position: relative;
+}
+
+.dish-name {
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #2A241F;
+  display: block;
+}
+
+.dish-desc {
+  font-size: 0.95rem;
+  color: #8D7661;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+.dish-price {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5C4033;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-columns {
+    flex-direction: column;
+  }
+
+  .dish-price {
+    position: static;
+    margin-top: 0.5rem;
+    display: block;
+    text-align: right;
+  }
+}
+.menu-toggle-container {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.menu-toggle-btn {
+  background-color: #E2725B;
+  color: #FCFCFA;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+}
+
+.menu-toggle-btn:hover {
+  background-color: #5C4033;
+  transform: translateY(-2px);
+}
+
+/* === Formules design === */
+.menu-formules {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.formule-card {
+  background-color: #FFF6ED;
+  border: 2px solid #FFE5B4;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 280px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.formule-card:hover {
+  transform: translateY(-6px);
+}
+
+.formule-card h3 {
+  color: #E2725B;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.formule-desc {
+  font-size: 0.95rem;
+  color: #8D7661;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.formule-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: #5C4033;
+  margin-bottom: 1.2rem;
+}
+
+.formule-card ul li {
+  margin: 0.4rem 0;
+}
+
+.formule-price {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #2A241F;
+  background-color: #FFE5B4;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}

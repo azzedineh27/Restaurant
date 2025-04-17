@@ -1,0 +1,174 @@
+.favoris-section {
+  background-color: #FFE5B4;
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.favoris-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #E2725B;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.favoris-slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.favoris-slider {
+  display: flex;
+  gap: 2.5rem;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.favoris-card {
+  background-color: #FFF1DC;
+  border-radius: 20px;
+  padding: 1.6rem 1.2rem 1.4rem;
+  text-align: left;
+  min-width: 320px;
+  max-width: 320px;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  border-left: 6px solid #E2725B;
+  transition: transform 0.3s ease;
+}
+
+.favoris-card:hover {
+  transform: translateY(-5px);
+}
+
+.favoris-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+}
+
+.favoris-card h3 {
+  font-size: 1.3rem;
+  color: #5C4033;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.4rem;
+}
+
+.favoris-card p {
+  color: #7A5B4A;
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+}
+
+.favoris-card .favoris-price {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #E2725B;
+  color: white;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+.favoris-button {
+  background-color: transparent;
+  color: #E2725B;
+  border: 2px solid #E2725B;
+  padding: 0.5rem 1.1rem;
+  border-radius: 25px;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+}
+
+.favoris-button:hover {
+  background-color: #E2725B;
+  color: white;
+}
+
+.favoris-button {
+  background-color: #E2725B;
+  color: white;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 30px;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+}
+
+.favoris-button:hover {
+  background-color: #5C4033;
+}
+
+.slider-btn {
+  background: none;
+  border: none;
+  font-size: 2.4rem;
+  color: #E2725B;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  transition: transform 0.3s ease, color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: #5C4033;
+}
+
+.slider-btn.left {
+  left: -80px;
+}
+
+.slider-btn.right {
+  right: -80px;
+}
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .favoris-card {
+    min-width: 260px;
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .favoris-slider {
+    gap: 1rem;
+  }
+
+  .slider-btn.left,
+  .slider-btn.right {
+    display: none;
+  }
+
+  .favoris-card {
+    min-width: 90%;
+    max-width: 90%;
+  }
+
+  .favoris-section h2 {
+    font-size: 2.2rem;
+  }
+}

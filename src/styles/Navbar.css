@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap');
+
+.navbar-modern {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 60px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 999;
+  font-family: 'Inter', sans-serif;
+}
+
+/* === Logo gauche === */
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #FFE5B4;
+  letter-spacing: 1px;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* === Centre : liens dans une capsule avec bordure === */
+.navbar-center {
+  background-color: #FFE5B4;
+  padding: 0.6rem 2rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  border: 2px solid #E2725B;
+  box-shadow: 0 6px 16px rgba(92, 64, 51, 0.05);
+}
+
+.navbar-center a {
+  text-decoration: none;
+  color: #5C4033;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-center a:hover {
+  color: #E2725B;
+}
+
+.navbar-center a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #E2725B;
+  transition: width 0.3s ease;
+}
+
+.navbar-center a:hover::after {
+  width: 100%;
+}
+
+.lang-toggle {
+  color: #5C4033;
+  cursor: pointer;
+  font-weight: 500;
+  padding-left: 0.8rem;
+  border-left: 1px solid #E2725B;
+}
+
+/* === Bouton à droite === */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.order-button {
+  background-color: #E2725B;
+  color: #FCFCFA;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  animation: pulse 2.5s infinite;
+}
+
+
+.order-button:hover {
+  background-color:rgb(222, 169, 70);
+  transform: translateY(-2px);
+}
+
+.arrow {
+  font-size: 1.2rem;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .navbar-modern {
+    flex-direction: column;
+    gap: 10px;
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  .navbar-center {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+  }
+
+  .order-button {
+    font-size: 0.95rem;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(226, 114, 91, 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(226, 114, 91, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(226, 114, 91, 0);
+  }
+}
