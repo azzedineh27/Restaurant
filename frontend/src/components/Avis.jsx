@@ -23,7 +23,7 @@ export default function Avis() {
       <div className="avis-container">
         {reviews.map((avis, index) => (
           <div className="avis-card" key={index}>
-            <div className="avis-icon">“</div>
+            <div className="avis-avatar">{avis.name.charAt(0)}</div>
             <p className="avis-quote">"{avis.quote}"</p>
             <p className="avis-name">— {avis.name}</p>
           </div>

@@ -59,4 +59,19 @@
     font-size: 0.95rem;
     font-family: 'Inter', sans-serif;
   }
+  .avis-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #E2725B;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
   

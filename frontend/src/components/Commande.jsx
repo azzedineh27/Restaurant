@@ -30,14 +30,12 @@ export default function Commande() {
         </div>
       </div>
 
-      <a
-        href="https://forms.gle/TON_LIEN_FORMULAIRE"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="commande-button"
-      >
-        Passer commande
-      </a>
+        <a
+          href="/commande-paiement"
+          className="commande-button"
+        >
+          Passer commande en ligne
+        </a>
     </section>
   );
 }

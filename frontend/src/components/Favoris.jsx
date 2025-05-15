@@ -24,19 +24,19 @@ const plats = [
     nom: "Curry de lentilles",
     prix: "13 €",
     description: "Coriandre, lait de coco",
-    image: "/public/curry.jpg",
+    image: "/public/curry_lentilles.jpg",
   },
   {
     nom: "Burger maison",
     prix: "14 €",
     description: "Pain brioché, sauce du chef",
-    image: "/public/burger.jpg",
+    image: "/public/burger_maison.jpg",
   },
   {
     nom: "Pâtes à la truffe",
     prix: "16 €",
     description: "Tagliatelles, crème de truffe",
-    image: "/public/truffe.jpg",
+    image: "/public/pates_truffe.jpg",
   },
 ];
 
