@@ -93,17 +93,259 @@
   color: #5C4033;
 }
 
+/* === Navigation interactive === */
+.menu-categories-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background-color: #FFF6ED;
+  border: 2px solid #FFE5B4;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  min-width: 100px;
+}
+
+.category-btn:hover {
+  background-color: #FFE5B4;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-btn.active {
+  background-color: #E2725B;
+  border-color: #E2725B;
+  color: white;
+}
+
+.category-btn.active:hover {
+  background-color: #5C4033;
+  border-color: #5C4033;
+}
+
+.category-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.category-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.menu-plats-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* === Grille de plats === */
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* === Cartes de plats === */
+.dish-card {
+  background: linear-gradient(135deg, #FFF6ED 0%, #FFE5B4 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  animation: slideInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.dish-card:nth-child(1) { animation-delay: 0.1s; }
+.dish-card:nth-child(2) { animation-delay: 0.2s; }
+.dish-card:nth-child(3) { animation-delay: 0.3s; }
+.dish-card:nth-child(4) { animation-delay: 0.4s; }
+.dish-card:nth-child(5) { animation-delay: 0.5s; }
+.dish-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dish-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dish-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.dish-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.dish-card:hover .dish-image img {
+  transform: scale(1.1);
+}
+
+.dish-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #E2725B, #5C4033);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 0 20px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dish-content {
+  padding: 1.5rem;
+}
+
+.dish-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2A241F;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+
+.dish-desc {
+  color: #8D7661;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.dish-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag.vegetarien {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+}
+
+
 /* Responsive */
+@media (max-width: 1200px) {
+  .dishes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-columns {
     flex-direction: column;
   }
 
-  .dish-price {
-    position: static;
-    margin-top: 0.5rem;
-    display: block;
-    text-align: right;
+  .menu-categories-nav {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .category-btn {
+    padding: 0.8rem 1rem;
+    min-width: 80px;
+  }
+
+  .category-icon {
+    font-size: 1.5rem;
+  }
+
+  .category-name {
+    font-size: 0.8rem;
+  }
+
+  .dishes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .dish-image {
+    height: 180px;
+  }
+
+  .dish-content {
+    padding: 1.2rem;
+  }
+
+  .dish-name {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-categories-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-btn {
+    width: 100%;
+    max-width: 200px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .dishes-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .menu-plats-container {
+    padding: 0 1rem;
+  }
+
+  .dish-image {
+    height: 160px;
+  }
+
+  .dish-content {
+    padding: 1rem;
   }
 }
 .menu-toggle-container {
@@ -130,11 +372,12 @@
 
 /* === Formules design === */
 .menu-formules {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
 }
 
 .formule-card {
@@ -142,16 +385,17 @@
   border: 2px solid #FFE5B4;
   border-radius: 16px;
   padding: 2rem;
-  width: 280px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
 .formule-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
 }
 
 .formule-card h3 {
@@ -159,6 +403,7 @@
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-family: 'Playfair Display', serif;
+  text-align: center;
 }
 
 .formule-desc {
@@ -166,6 +411,7 @@
   color: #8D7661;
   margin-bottom: 1rem;
   font-style: italic;
+  text-align: center;
 }
 
 .formule-card ul {
@@ -175,17 +421,49 @@
   text-align: center;
   color: #5C4033;
   margin-bottom: 1.2rem;
+  flex-grow: 1;
 }
 
 .formule-card ul li {
   margin: 0.4rem 0;
+  padding: 0.2rem 0;
+  border-bottom: 1px dotted rgba(92, 64, 51, 0.2);
+}
+
+.formule-card ul li:last-child {
+  border-bottom: none;
 }
 
 .formule-price {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #2A241F;
   background-color: #FFE5B4;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  margin-bottom: 0.5rem;
+}
+
+.formule-economie {
+  font-size: 0.9rem;
+  color: #E2725B;
+  font-weight: 600;
+  background-color: #FFF0E6;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  border: 1px solid #FFE5B4;
+}
+
+/* Responsive pour les formules */
+@media (max-width: 768px) {
+  .menu-formules {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .formule-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }

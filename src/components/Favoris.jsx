@@ -6,37 +6,37 @@ const plats = [
     nom: "Lasagnes végétariennes",
     prix: "12 €",
     description: "Fausse. gramaï. noure",
-    image: "/public/lasagnes.jpg",
+    image: "/lasagnes.jpg",
   },
   {
     nom: "Poulet rôti aux herbes",
     prix: "15 €",
     description: "Salu aux jultae de soice",
-    image: "/public/poulet.jpg",
+    image: "/poulet.jpg",
   },
   {
     nom: "Tarte aux pommes",
     prix: "8 €",
     description: "Paye aux pommes",
-    image: "/public/tarte.jpg",
+    image: "/tarte.jpg",
   },
   {
     nom: "Curry de lentilles",
     prix: "13 €",
     description: "Coriandre, lait de coco",
-    image: "/public/curry.jpg",
+    image: "/curry.jpg",
   },
   {
     nom: "Burger maison",
     prix: "14 €",
     description: "Pain brioché, sauce du chef",
-    image: "/public/burger.jpg",
+    image: "/burger.jpg",
   },
   {
     nom: "Pâtes à la truffe",
     prix: "16 €",
     description: "Tagliatelles, crème de truffe",
-    image: "/public/truffe.jpg",
+    image: "/truffe.jpg",
   },
 ];
 

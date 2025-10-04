@@ -1,8 +1,63 @@
 import { useState } from 'react';
 import '../styles/menu.css';
+import { platsData, formulesData } from '../data/platsData';
 
 export default function Menu() {
   const [isCarteVisible, setIsCarteVisible] = useState(true);
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  // Combiner tous les plats
+  const allPlats = [
+    ...platsData.entrees.map(plat => ({ ...plat, category: 'entrees' })),
+    ...platsData.plats.map(plat => ({ ...plat, category: 'plats' })),
+    ...platsData.desserts.map(plat => ({ ...plat, category: 'desserts' })),
+    ...platsData.boissons.map(plat => ({ ...plat, category: 'boissons' }))
+  ];
+
+  // Filtrer les plats selon la catégorie active
+  const filteredPlats = activeCategory === 'all' ? allPlats : allPlats.filter(plat => plat.category === activeCategory);
+
+  const categories = [
+    { id: 'all', name: 'Tout', icon: '🍽️' },
+    { id: 'entrees', name: 'Entrées', icon: '🥗' },
+    { id: 'plats', name: 'Plats', icon: '🍖' },
+    { id: 'desserts', name: 'Desserts', icon: '🍰' },
+    { id: 'boissons', name: 'Boissons', icon: '🥤' }
+  ];
+
+  const renderPlat = (plat) => (
+    <li key={plat.id} className="dish-card">
+      <div className="dish-image">
+        <img src={plat.image} alt={plat.nom} />
+        <div className="dish-overlay">
+          <span className="dish-price-badge">{plat.prix} €</span>
+        </div>
+      </div>
+      <div className="dish-content">
+        <h4 className="dish-name">{plat.nom}</h4>
+        <p className="dish-desc">{plat.description}</p>
+        <div className="dish-tags">
+          {plat.vegetarien && <span className="tag vegetarien">Végétarien</span>}
+        </div>
+      </div>
+    </li>
+  );
+
+  const renderFormule = (formule) => (
+    <div key={formule.id} className="formule-card">
+      <h3>{formule.nom}</h3>
+      <p className="formule-desc">{formule.description}</p>
+      <ul>
+        {formule.plats.map((plat, index) => (
+          <li key={index}>{plat}</li>
+        ))}
+      </ul>
+      <div className="formule-price">{formule.prix} €</div>
+      {formule.economie && (
+        <div className="formule-economie">Économie: {formule.economie} €</div>
+      )}
+    </div>
+  );
 
   return (
     <section id="menu" className="menu-section">
@@ -18,124 +73,40 @@ export default function Menu() {
       </div>
 
       {isCarteVisible ? (
-        <div className="menu-columns">
-
-        {/* Colonne gauche */}
-        <div className="menu-left">
-          {/* Entrées */}
-          <div className="menu-category">
-            <h3>Entrées</h3>
-            <ul>
-              <li>
-                <span className="dish-name">Velouté de potimarron</span>
-                <span className="dish-desc">Crème d’amande, croûtons maison</span>
-                <span className="dish-price">8 €</span>
-              </li>
-              <li>
-                <span className="dish-name">Carpaccio de légumes</span>
-                <span className="dish-desc">Courgette, betterave, feta, vinaigrette miel</span>
-                <span className="dish-price">9 €</span>
-              </li>
-            </ul>
+        <>
+          {/* Navigation interactive par catégories */}
+          <div className="menu-categories-nav">
+            {categories.map(category => (
+              <button
+                key={category.id}
+                className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
+                onClick={() => setActiveCategory(category.id)}
+              >
+                <span className="category-icon">{category.icon}</span>
+                <span className="category-name">{category.name}</span>
+              </button>
+            ))}
           </div>
 
-          {/* Desserts */}
-          <div className="menu-category">
-            <h3>Desserts</h3>
-            <ul>
-              <li>
-                <span className="dish-name">Tarte fine aux pommes</span>
-                <span className="dish-desc">Boule de vanille artisanale</span>
-                <span className="dish-price">7 €</span>
-              </li>
-              <li>
-                <span className="dish-name">Fondant chocolat</span>
-                <span className="dish-desc">Cœur coulant & crème anglaise</span>
-                <span className="dish-price">8 €</span>
-              </li>
-            </ul>
+          {/* Affichage des plats filtrés */}
+          <div className="menu-plats-container">
+            <div className="menu-category">
+              <h3>
+                {activeCategory === 'all' ? 'Tous nos plats' : 
+                 activeCategory === 'entrees' ? 'Entrées' :
+                 activeCategory === 'plats' ? 'Plats' :
+                 activeCategory === 'desserts' ? 'Desserts' :
+                 activeCategory === 'boissons' ? 'Boissons' : 'Plats'}
+              </h3>
+              <div className="dishes-grid">
+                {filteredPlats.map(renderPlat)}
+              </div>
+            </div>
           </div>
-        </div>
-
-        {/* Colonne droite */}
-        <div className="menu-right">
-          {/* Plats */}
-          <div className="menu-category">
-            <h3>Plats</h3>
-            <ul>
-              <li>
-                <span className="dish-name">Poulet rôti aux herbes</span>
-                <span className="dish-desc">Pommes grenailles, jus au thym</span>
-                <span className="dish-price">16 €</span>
-              </li>
-              <li>
-                <span className="dish-name">Lasagnes végétariennes</span>
-                <span className="dish-desc">Légumes grillés & mozzarella fondue</span>
-                <span className="dish-price">14 €</span>
-              </li>
-              <li>
-                <span className="dish-name">Curry de lentilles corail</span>
-                <span className="dish-desc">Lait de coco, coriandre fraîche</span>
-                <span className="dish-price">13 €</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Boissons */}
-          <div className="menu-category">
-            <h3>Boissons</h3>
-            <ul>
-              <li>
-                <span className="dish-name">Eau plate / gazeuse</span>
-                <span className="dish-price">2 €</span>
-              </li>
-              <li>
-                <span className="dish-name">Thé glacé maison</span>
-                <span className="dish-price">3.5 €</span>
-              </li>
-              <li>
-                <span className="dish-name">Verre de vin bio</span>
-                <span className="dish-price">5 €</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
+        </>
       ) : (
         <div className="menu-formules">
-          <div className="formule-card">
-            <h3>Formule Déjeuner</h3>
-            <p className="formule-desc">Entrée + Plat ou Plat + Dessert</p>
-            <ul>
-              <li>Velouté du jour</li>
-              <li>Plat du marché</li>
-              <li>Dessert maison</li>
-            </ul>
-            <div className="formule-price">18 €</div>
-          </div>
-
-          <div className="formule-card">
-            <h3>Formule Gourmande</h3>
-            <p className="formule-desc">Entrée + Plat + Dessert</p>
-            <ul>
-              <li>Salade de chèvre chaud</li>
-              <li>Poulet rôti ou Lasagnes végé</li>
-              <li>Tarte fine ou Fondant</li>
-            </ul>
-            <div className="formule-price">23 €</div>
-          </div>
-
-          <div className="formule-card">
-            <h3>Formule Végétarienne</h3>
-            <p className="formule-desc">Entrée + Plat + Dessert</p>
-            <ul>
-              <li>Carpaccio de légumes</li>
-              <li>Curry de lentilles</li>
-              <li>Fondant chocolat</li>
-            </ul>
-            <div className="formule-price">21 €</div>
-          </div>
+          {formulesData.map(renderFormule)}
         </div>
       )}
     </section>

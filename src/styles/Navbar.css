@@ -14,13 +14,11 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* === Logo gauche === */
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 600;
-  color: #FFE5B4;
-  letter-spacing: 1px;
+/* === Logo gauche (image) === */
+.logo-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
   padding: 0.4rem 1rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -97,9 +95,8 @@
   animation: pulse 2.5s infinite;
 }
 
-
 .order-button:hover {
-  background-color:rgb(222, 169, 70);
+  background-color: rgb(222, 169, 70);
   transform: translateY(-2px);
 }
 
@@ -126,6 +123,7 @@
     font-size: 0.95rem;
   }
 }
+
 @keyframes pulse {
   0% {
     transform: scale(1);

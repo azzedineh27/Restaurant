@@ -42,16 +42,16 @@ export default function About() {
         <div className="subtitle">Notre histoire</div>
         <h2>À propos</h2>
         <p>
-          RESTO est né d’une passion pour la cuisine authentique, généreuse et pleine de cœur.
+          L'atelier de msemen94 est né d’une passion pour la cuisine authentique, généreuse et pleine de cœur.
           Chaque plat est cuisiné maison à partir de produits frais, locaux et de saison.
         </p>
         <p>
           Nous croyons en une restauration simple, humaine et chaleureuse, qui met en avant le goût,
-          la qualité et le partage. Bienvenue chez RESTO, votre nouveau rendez-vous gourmand.
+          la qualité et le partage. Bienvenue chez L'atelier de msemen94, votre nouveau rendez-vous gourmand.
         </p>
 
         <div className="about-quote">
-          <blockquote>“Chez RESTO, on cuisine comme à la maison… mais en mieux.”</blockquote>
+          <blockquote>“Chez L'atelier de msemen94, on cuisine comme à la maison… mais en mieux.”</blockquote>
         </div>
         
         <a href="#menu" className="about-link">Découvrir notre menu →</a>

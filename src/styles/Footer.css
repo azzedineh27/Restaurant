@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap');
+
 .footer-section {
   background-color: #2A241F;
   color: #FCFCFA;
@@ -27,6 +29,16 @@
   font-family: 'Playfair Display', serif;
   color: #FFE5B4;
   margin-bottom: 0.5rem;
+}
+
+/* ✅ Nouveau style pour le logo image */
+.footer-logo-img {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .footer-slogan {

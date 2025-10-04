@@ -9,12 +9,12 @@ export default function Navbar() {
     <header className="navbar-modern">
       {/* Logo gauche */}
       <div className="navbar-left">
-        <div className="logo">RESTO</div>
+        <img src="/msemen94_logo2.png" alt="Logo du restaurant" className="logo-img" />
       </div>
 
       {/* Liens centrés */}
       <nav className="navbar-center">
-        <Link to="home" smooth={true} duration={500}>Accueil</Link>
+        <Link to="header" smooth={true} duration={500}>Accueil</Link>
         <Link to="about" smooth={true} duration={500}>À propos</Link>
         <Link to="menu" smooth={true} duration={500}>Menu</Link>
         <Link to="commande" smooth={true} duration={500}>Commander</Link>
