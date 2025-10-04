@@ -373,45 +373,76 @@
 /* === Formules design === */
 .menu-formules {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 2rem auto 0;
-  padding: 0 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
 }
 
 .formule-card {
-  background-color: #FFF6ED;
-  border: 2px solid #FFE5B4;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  background: linear-gradient(145deg, #FFF6ED 0%, #FFE5B4 50%, #FFF6ED 100%);
+  border: 3px solid #E2725B;
+  border-radius: 25px;
+  padding: 2.5rem;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
+  overflow: hidden;
+}
+
+.formule-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #E2725B, #5C4033, #E2725B);
 }
 
 .formule-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  border-color: #5C4033;
 }
 
 .formule-card h3 {
-  color: #E2725B;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  color: #2A241F;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
   font-family: 'Playfair Display', serif;
   text-align: center;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.formule-card h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #E2725B, #5C4033);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
 }
 
 .formule-desc {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #8D7661;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-style: italic;
   text-align: center;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .formule-card ul {
@@ -420,50 +451,131 @@
   margin: 0;
   text-align: center;
   color: #5C4033;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2rem;
   flex-grow: 1;
+  width: 100%;
 }
 
 .formule-card ul li {
-  margin: 0.4rem 0;
-  padding: 0.2rem 0;
-  border-bottom: 1px dotted rgba(92, 64, 51, 0.2);
+  margin: 0.8rem 0;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  font-weight: 500;
+  border-left: 4px solid #E2725B;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.formule-card ul li:last-child {
-  border-bottom: none;
+.formule-card ul li:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateX(5px);
+  border-left-color: #5C4033;
+}
+
+.formule-card ul li::before {
+  content: '✓';
+  color: #E2725B;
+  font-weight: bold;
+  margin-right: 0.5rem;
 }
 
 .formule-price {
-  font-weight: 700;
-  font-size: 1.4rem;
+  font-weight: 800;
+  font-size: 1.8rem;
   color: #2A241F;
-  background-color: #FFE5B4;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #E2725B, #5C4033);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 20px rgba(226, 114, 91, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.formule-price::before {
+  content: '€';
+  font-size: 1.2rem;
+  margin-left: 0.3rem;
 }
 
 .formule-economie {
   font-size: 0.9rem;
-  color: #E2725B;
-  font-weight: 600;
-  background-color: #FFF0E6;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  border: 1px solid #FFE5B4;
+  color: #2A241F;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
+/* Animation d'apparition pour les formules */
+.formule-card {
+  animation: slideInUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.formule-card:nth-child(1) { animation-delay: 0.1s; }
+.formule-card:nth-child(2) { animation-delay: 0.3s; }
+.formule-card:nth-child(3) { animation-delay: 0.5s; }
+.formule-card:nth-child(4) { animation-delay: 0.7s; }
+.formule-card:nth-child(5) { animation-delay: 0.9s; }
+
 /* Responsive pour les formules */
+@media (max-width: 1200px) {
+  .menu-formules {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-formules {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    padding: 0 1rem;
   }
   
   .formule-card {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 20px;
+  }
+
+  .formule-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .formule-price {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-formules {
+    padding: 0 0.5rem;
+  }
+
+  .formule-card {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+
+  .formule-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .formule-card ul li {
+    padding: 0.5rem 0.8rem;
+    margin: 0.6rem 0;
+  }
+
+  .formule-price {
+    font-size: 1.4rem;
+    padding: 0.7rem 1.2rem;
   }
 }

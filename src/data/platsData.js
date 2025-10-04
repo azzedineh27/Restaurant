@@ -271,18 +271,5 @@ export const formulesData = [
       "Boissons incluses"
     ],
     economie: 15
-  },
-  {
-    id: "decouverte",
-    nom: "Formule Découverte",
-    description: "Menu dégustation",
-    prix: 35,
-    plats: [
-      "3 Entrées mini",
-      "3 Plats mini",
-      "3 Desserts mini",
-      "Accompagnement vin"
-    ],
-    economie: 8
   }
 ];
