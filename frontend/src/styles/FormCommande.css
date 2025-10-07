@@ -1,0 +1,102 @@
+.commande-form-section {
+  background: #FFF6ED;
+  padding: 4rem 2rem;
+  font-family: 'Inter', sans-serif;
+  color: #5C4033;
+}
+
+.commande-form-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #E2725B;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.commande-form {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #5C4033;
+}
+
+.form-group input, 
+.form-group select {
+  padding: 0.8rem;
+  border: 2px solid #FFE5B4;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.form-selects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.order-summary {
+  margin-top: 2rem;
+  background: #FFF6ED;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.order-summary h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #E2725B;
+}
+
+.order-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-summary li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
+}
+
+.order-total {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.pay-button {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #E2725B, #5C4033);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pay-button:hover {
+  background: linear-gradient(135deg, #5C4033, #E2725B);
+  transform: translateY(-2px);
+}

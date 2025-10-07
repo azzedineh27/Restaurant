@@ -1,0 +1,99 @@
+.infos-section {
+  background-color : #FFE5B4;
+  padding: 5rem 2rem;
+  color: #2A241F;
+  font-family: 'Inter', sans-serif;
+}
+
+.infos-title {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #E2725B;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.infos-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #E2725B;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.infos-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+.infos-contact, .infos-horaires {
+  flex: 1;
+  min-width: 300px;
+  background: #FFF1DC;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.infos-contact:hover, .infos-horaires:hover {
+  transform: translateY(-5px);
+}
+
+.infos-contact h3, .infos-horaires h3 {
+  font-size: 1.4rem;
+  color: #5C4033;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  border-left: 4px solid #E2725B;
+  padding-left: 0.8rem;
+}
+
+.infos-contact p, .infos-horaires ul li {
+  font-size: 1rem;
+  margin: 0.6rem 0;
+  color: #5C4033;
+}
+
+.infos-contact a {
+  color: #E2725B;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.infos-contact a:hover {
+  text-decoration: underline;
+}
+
+.infos-horaires ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.infos-horaires li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
+}
+
+.infos-horaires li:last-child {
+  border-bottom: none;
+}
+
+.jour {
+  font-weight: 600;
+}
+
+.heures {
+  color: #8D7661;
+  font-style: italic;
+}
